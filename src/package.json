@@ -1,0 +1,22 @@
+{
+  "name": "alexa-app",
+  "version": "2.0.0",
+  "description": "Fluffy Radio Alexa App",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fluffyradio/alexa-app.git"
+  },
+  "author": "Fluffy Radio",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/fluffyradio/alexa-app/issues"
+  },
+  "homepage": "https://github.com/fluffyradio/alexa-app#readme",
+  "dependencies": {
+    "alexa-sdk": "^1.0.7"
+  }
+}
