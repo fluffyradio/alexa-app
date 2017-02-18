@@ -15,5 +15,6 @@ module.exports = Object.freeze({
      */
   states: {
     START: '',
+    STREAM: '_STREAM',
   },
 });

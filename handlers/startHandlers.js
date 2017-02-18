@@ -6,6 +6,11 @@ const startHandlers = alexa.CreateStateHandler(constants.states.START, {
     this.response.speak(this.t('WELCOME')).listen(this.t('WELCOME'));
     this.emit(':responseReady');
   },
+  PlayStream() {
+    this.handler.state = constants.states.STREAM;
+    this.response.audioPlayerPlay('REPLACE_ALL', constants.fluffyStreamUrl, '0', null, 0);
+    this.emit(':responseReady');
+  },
   SessionEndedRequest() {
     this.emit(':tell', this.t('EXIT'));
   },
