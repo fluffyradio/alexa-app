@@ -7,6 +7,7 @@ const constants = require('./constants');
 const resourceStrings = require('./resources');
 
 const startHandlers = require('./handlers/startHandlers');
+const audioHandlers = require('./handlers/audioHandlers');
 
 // Main Export
 exports.handler = function (event, context) {
@@ -21,7 +22,7 @@ exports.handler = function (event, context) {
   skill.resources = resourceStrings;
 
   logger.info('Registering Skill Handlers');
-  skill.registerHandlers(startHandlers);
+  skill.registerHandlers(startHandlers, audioHandlers);
 
     // Get Current Song
     // Request a Song
