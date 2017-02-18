@@ -1,19 +1,11 @@
 root = true
 
 [*]
-end_of_line = lf
+indent_style = space
+indent_size = 2
 charset = utf-8
 trim_trailing_whitespace = true
 insert_final_newline = true
-
-[*.js]
-indent_style = space
-indent_size = 4
-
-[*.json]
-indent_style = space
-indent_size = 4
-
-[{package.json,.jshintrc,}]
-indent_style = space
-indent_size = 2
+end_of_line = lf
+# editorconfig-tools is unable to ignore longs strings or urls
+max_line_length = null
