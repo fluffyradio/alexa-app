@@ -1,0 +1,11 @@
+PlayStream to play
+PlayStream to start
+PlayStream begin
+PlayStream fluff on
+PlayStream to fluff on
+RequestSong	{hello|SEARCHSTRING}
+RequestSong {uptown funk|SEARCHSTRING}
+RequestSong	to request {adele|SEARCHSTRING}
+RequestSong to request {uptown funk|SEARCHSTRING}
+RequestSong	request {hello|SEARCHSTRING}
+RequestSong	request {uptown funk|SEARCHSTRING}

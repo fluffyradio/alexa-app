@@ -1,0 +1,55 @@
+{
+    "intents": [
+        {
+            "intent": "AMAZON.HelpIntent"
+        },
+        {
+            "intent": "AMAZON.StopIntent"
+        },
+        {
+            "intent": "AMAZON.CancelIntent"
+        },
+        {
+            "intent": "AMAZON.ResumeIntent"
+        },
+        {
+            "intent": "AMAZON.PauseIntent"
+        },
+        {
+            "intent": "AMAZON.LoopOffIntent"
+        },
+        {
+            "intent": "AMAZON.LoopOnIntent"
+        },
+        {
+            "intent": "AMAZON.NextIntent"
+        },
+        {
+            "intent": "AMAZON.PreviousIntent"
+        },
+        {
+            "intent": "AMAZON.RepeatIntent"
+        },
+        {
+            "intent": "AMAZON.ShuffleOffIntent"
+        },
+        {
+            "intent": "AMAZON.ShuffleOnIntent"
+        },
+        {
+            "intent": "AMAZON.StartOverIntent"
+        },
+        {
+            "intent": "PlayStream"
+        },
+        {
+            "intent": "RequestSong",
+            "slots": [
+                {
+                    "name": "SEARCHSTRING",
+                    "type": "AMAZON.LITERAL"
+                }
+            ]
+        }
+    ]
+}
