@@ -1,5 +1,6 @@
 const alexa = require('alexa-sdk');
 const constants = require('../constants');
+const audioControl = require('../services/audioControl');
 
 const startHandlers = alexa.CreateStateHandler(constants.states.START, {
   LaunchRequest() {
@@ -7,17 +8,15 @@ const startHandlers = alexa.CreateStateHandler(constants.states.START, {
     this.emit(':responseReady');
   },
   PlayStream() {
-    this.handler.state = constants.states.STREAM;
-    this.response.audioPlayerPlay('REPLACE_ALL', constants.fluffyStreamUrl, '0', null, 0);
-    this.emit(':responseReady');
+    audioControl.play.call(this);
   },
   SessionEndedRequest() {
     this.emit(':tell', this.t('EXIT'));
   },
-  'AMAZON.StopIntent': function () {
+  'AMAZON.StopIntent': function stop() {
     this.emit('SessionEndedRequest');
   },
-  'AMAZON.CancelIntent': function () {
+  'AMAZON.CancelIntent': function cancel() {
     this.emit('SessionEndedRequest');
   },
   Unhandled() {

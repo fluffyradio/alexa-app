@@ -8,9 +8,10 @@ const resourceStrings = require('./resources');
 
 const startHandlers = require('./handlers/startHandlers');
 const audioHandlers = require('./handlers/audioHandlers');
+const remoteControlHandlers = require('./handlers/remoteControlHandlers');
 
 // Main Export
-exports.handler = function (event, context) {
+exports.handler = function main(event, context) {
   const logger = log4js.getLogger();
 
   logger.info('Preparing Skill');
@@ -22,11 +23,7 @@ exports.handler = function (event, context) {
   skill.resources = resourceStrings;
 
   logger.info('Registering Skill Handlers');
-  skill.registerHandlers(startHandlers, audioHandlers);
-
-    // Get Current Song
-    // Request a Song
-    // Stream Fluffy
+  skill.registerHandlers(startHandlers, audioHandlers, remoteControlHandlers);
 
   logger.info('Starting Skill');
   skill.execute();
