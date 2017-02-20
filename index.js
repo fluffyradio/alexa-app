@@ -1,4 +1,5 @@
 // Module Imports
+const newrelic = require('newrelic');
 const log4js = require('log4js');
 const alexa = require('alexa-sdk');
 const AWS = require('aws-sdk');
@@ -27,4 +28,13 @@ exports.handler = function main(event, context) {
 
   logger.info('Starting Skill');
   skill.execute();
+
+  // eslint-disable-next-line no-underscore-dangle
+  if (newrelic.agent._state === 'starting') {
+    newrelic.agent.on('connected', () => {
+      newrelic.shutdown({ collectPendingData: true });
+    });
+  } else {
+    newrelic.shutdown({ collectPendingData: true });
+  }
 };
