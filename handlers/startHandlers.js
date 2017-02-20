@@ -1,6 +1,7 @@
 const alexa = require('alexa-sdk');
 const constants = require('../constants');
 const audioControl = require('../services/audioControl');
+const apiControl = require('../services/apiControl.js');
 
 const startHandlers = alexa.CreateStateHandler(constants.states.START, {
   LaunchRequest() {
@@ -8,8 +9,10 @@ const startHandlers = alexa.CreateStateHandler(constants.states.START, {
     this.emit(':responseReady');
   },
   PlayStream() {
-    console.log(audioControl);
     audioControl.play.call(this);
+  },
+  CurrentSong() {
+    apiControl.currentSong.call(this);
   },
   SessionEndedRequest() {
     this.emit(':tell', this.t('EXIT'));

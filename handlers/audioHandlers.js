@@ -1,6 +1,7 @@
 const alexa = require('alexa-sdk');
 const constants = require('../constants');
 const audioControl = require('../services/audioControl');
+const apiControl = require('../services/apiControl.js');
 
 const audioHandlers = alexa.CreateStateHandler(constants.states.STREAM, {
   LaunchRequest() {
@@ -10,6 +11,9 @@ const audioHandlers = alexa.CreateStateHandler(constants.states.STREAM, {
   },
   PlayStream() {
     audioControl.play.call(this);
+  },
+  CurrentSong() {
+    apiControl.currentSong.call(this);
   },
   'AMAZON.ResumeIntent': function resume() {
     audioControl.play.call(this);
