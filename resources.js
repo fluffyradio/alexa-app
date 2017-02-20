@@ -12,7 +12,7 @@ module.exports = Object.freeze({
       STREAM_SHUFFLE_ON: 'Wait a minute... we get to pick the fluffing music.',
       STREAM_SHUFFLE_OFF: 'A big bad government agency doesn\'t allow you to turn our shuffle algorithms off.',
       STREAM_START_OVER: 'We can\'t restart the music.',
-      STREAM_HELP: '',
+      STREAM_HELP: 'You\'re screwed!',
     },
   },
   'en-GB': {

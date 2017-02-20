@@ -52,7 +52,8 @@ const audioHandlers = alexa.CreateStateHandler(constants.states.STREAM, {
     this.emit(':tell', this.t('STREAM_FAILED'));
   },
   Unhandled() {
-    this.emit(':tell', this.t('ERROR'));
+    // Manage errors here
+    // TODO: Log errors to the logger
   },
 });
 

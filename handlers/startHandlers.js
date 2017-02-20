@@ -8,6 +8,7 @@ const startHandlers = alexa.CreateStateHandler(constants.states.START, {
     this.emit(':responseReady');
   },
   PlayStream() {
+    console.log(audioControl);
     audioControl.play.call(this);
   },
   SessionEndedRequest() {
@@ -18,6 +19,10 @@ const startHandlers = alexa.CreateStateHandler(constants.states.START, {
   },
   'AMAZON.CancelIntent': function cancel() {
     this.emit('SessionEndedRequest');
+  },
+  'AMAZON.HelpIntent': function help() {
+    this.response.speak(this.t('STREAM_HELP')).listen(this.t('STREAM_HELP'));
+    this.emit(':responseReady');
   },
   Unhandled() {
     this.response.speak(this.t('WELCOME'));
