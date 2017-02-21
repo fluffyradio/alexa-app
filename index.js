@@ -10,6 +10,7 @@ const resourceStrings = require('./resources');
 const startHandlers = require('./handlers/startHandlers');
 const audioHandlers = require('./handlers/audioHandlers');
 const remoteControlHandlers = require('./handlers/remoteControlHandlers');
+const requestHandlers = require('./handlers/requestHandlers');
 
 // Main Export
 exports.handler = function main(event, context) {
@@ -24,7 +25,7 @@ exports.handler = function main(event, context) {
   skill.resources = resourceStrings;
 
   logger.info('Registering Skill Handlers');
-  skill.registerHandlers(startHandlers, audioHandlers, remoteControlHandlers);
+  skill.registerHandlers(startHandlers, audioHandlers, remoteControlHandlers, requestHandlers);
 
   logger.info('Starting Skill');
   skill.execute();

@@ -14,6 +14,10 @@ const startHandlers = alexa.CreateStateHandler(constants.states.START, {
   CurrentSong() {
     apiControl.currentSong.call(this);
   },
+  RequestSong() {
+    this.handler.state = constants.states.REQUEST;
+    this.emit(':responseReady');
+  },
   SessionEndedRequest() {
     this.emit(':tell', this.t('EXIT'));
   },
