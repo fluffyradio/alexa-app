@@ -48,6 +48,14 @@ const audioHandlers = alexa.CreateStateHandler(constants.states.STREAM, {
   'AMAZON.StartOverIntent': function startOver() {
     this.emit(':tell', this.t('STREAM_START_OVER'));
   },
+  SessionEndedRequest() {
+    this.response.state = constants.states.START;
+    this.response.speak(this.t('EXIT'));
+    this.emit(':responseReady');
+  },
+  'AMAZON.CancelIntent': function cancel() {
+    this.emit('SessionEndedRequest');
+  },
   'AMAZON.HelpIntent': function help() {
     this.response.speak(this.t('STREAM_HELP')).listen(this.t('STREAM_HELP'));
     this.emit(':responseReady');
