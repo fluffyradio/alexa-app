@@ -21,7 +21,7 @@ module.exports = Object.freeze({
   *  REQUEST_SELECT : State when a search is complete.
   */
   states: {
-    START: '',
+    START: '_START',
     STREAM: '_STREAM',
     REQUEST: '_REQUEST',
     REQUEST_SELECT: '_REQUEST_SELECT',

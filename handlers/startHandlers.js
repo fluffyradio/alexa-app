@@ -4,6 +4,7 @@ const audioControl = require('../services/audioControl');
 const apiControl = require('../services/apiControl.js');
 const requestControl = require('../services/requestControl');
 
+// Handles all START commands
 const startHandlers = alexa.CreateStateHandler(constants.states.START, {
   LaunchRequest() {
     this.response.speak(this.t('WELCOME')).listen(this.t('WELCOME'));

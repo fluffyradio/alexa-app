@@ -3,6 +3,7 @@ const constants = require('../constants');
 const audioControl = require('../services/audioControl');
 const apiControl = require('../services/apiControl.js');
 
+// Handles all STREAM commands
 const audioHandlers = alexa.CreateStateHandler(constants.states.STREAM, {
   LaunchRequest() {
     this.handler.state = constants.states.START;
