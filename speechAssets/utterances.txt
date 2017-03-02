@@ -3,3 +3,5 @@ CurrentSong current
 RequestSong request {hello|SEARCHSTRING}
 RequestSong request {adele|SEARCHSTRING}
 RequestSong request {bruno mars|SEARCHSTRING}
+SelectSong {SONGSELECTION}
+SelectSong number {SONGSELECTION}

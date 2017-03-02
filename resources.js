@@ -23,6 +23,7 @@ module.exports = Object.freeze({
       REQUEST_SEARCH_ERROR: 'I ran into a problem searching for your request.',
       REQUEST_RESULT_ERROR: 'I wasn\'t able to request your song, please try again later',
       REQUEST_RESULT_SUCCESS: 'Sweet, we\'ve queued up you request',
+      REQUEST_SELECT_TOO_HIGH: 'You can only select one through three, which number did you want?',
     },
   },
   'en-GB': {

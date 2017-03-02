@@ -46,15 +46,52 @@ module.exports = {
         const requestOptions = [length];
         for (let i = 0; i < length; i += 1) {
           output += `${i + 1}. ${songs[i].title} ${this.t('SONG_JOINER')} ${songs[i].artist}. `;
-          requestOptions[i] = songs[i].id;
+          requestOptions[i] = {
+            id: songs[i].id,
+            title: songs[i].title,
+            artist: songs[i].artist,
+          };
         }
         this.attributes.REQUEST_RESULTS = requestOptions;
-        this.emit(':ask', output);
+        this.emit(':ask', output, output);
       }
     }).catch((error) => {
       logger.error(error);
       this.response.speak(this.t('REQUEST_SEARCH_ERROR'));
       this.emit(':responseReady');
+    });
+  },
+  finishRequest() {
+    logger.debug(JSON.stringify(this.event.request.intent.slots));
+    const songSelection = this.event.request.intent.slots.SONGSELECTION;
+
+    if (!songSelection && !songSelection.value) {
+      // We shouldn't get here
+    }
+
+    if (songSelection.value > 3) {
+      // You can't select more than 3
+      this.emit(':ask', this.t('REQUEST_SELECT_TOO_HIGH'));
+    }
+
+    const i = songSelection.value - 1;
+
+    const song = this.attributes.REQUEST_RESULTS[i];
+
+    if (!song) {
+      logger.error('Empty song object');
+    }
+
+    logger.debug(song);
+
+    fluffyApi.requestSong(song.id).then((result) => {
+      logger.debug(result);
+      this.attributes.REQUEST_RESULTS = null;
+      this.emit(':tell', this.t('REQUEST_RESULT_SUCCESS'));
+    }).catch((error) => {
+      logger.error(error);
+      this.attributes.REQUEST_RESULTS = null;
+      this.emit(':tell', this.t('REQUEST_RESULT_ERROR'));
     });
   },
   singleYesRequest() {

@@ -59,6 +59,15 @@
           "type": "AMAZON.LITERAL"
         }
       ]
+    },
+    {
+      "intent": "SelectSong",
+      "slots": [
+        {
+          "name": "SONGSELECTION",
+          "type": "AMAZON.NUMBER"
+        }
+      ]
     }
   ]
 }

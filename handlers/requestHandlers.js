@@ -11,6 +11,9 @@ const requestHandlers = alexa.CreateStateHandler(constants.states.REQUEST, {
   RequestSong() {
     requestControl.startRequest.call(this);
   },
+  SelectSong() {
+    requestControl.finishRequest.call(this);
+  },
   'AMAZON.YesIntent': function yes() {
     requestControl.singleYesRequest.call(this);
   },

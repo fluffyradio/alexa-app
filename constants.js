@@ -18,12 +18,12 @@ module.exports = Object.freeze({
   *  START          : Welcome state when the skill is launched.
   *  STREAM         : State when in audio playback mode.
   *  REQUEST        : State when user is searching for a song.
-  *  REQUEST_RESULT : State when a search is complete.
+  *  REQUEST_SELECT : State when a search is complete.
   */
   states: {
     START: '',
     STREAM: '_STREAM',
     REQUEST: '_REQUEST',
-    REQUEST_RESULT: '_REQUEST_RESULT',
+    REQUEST_SELECT: '_REQUEST_SELECT',
   },
 });
