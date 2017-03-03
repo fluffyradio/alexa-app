@@ -5,6 +5,8 @@ CurrentSong what's on
 CurrentSong what's on right now
 CurrentSong what's playing
 CurrentSong what's playing right now
+NoSelection nevermind
+NoSelection none of those
 PlayStream begin
 PlayStream begin now
 PlayStream fluff on

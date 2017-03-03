@@ -1,4 +1,5 @@
 const log4js = require('log4js');
+const utils = require('../utils');
 const fluffyApi = require('../services/fluffyApi');
 
 const logger = log4js.getLogger();
@@ -19,9 +20,11 @@ module.exports = {
       }
 
       // Tell the user what the current song is
-      this.emit(':tell',
+      this.emit(':tellWithCard',
                   `${song.title} ${this.t('SONG_JOINER')} ${song.artist}`,
-                  `${song.title} ${this.t('SONG_JOINER')} ${song.artist}`);
+                  `${utils.replaceBrackets(song.artist)} - ${utils.replaceBrackets(song.title)}`,
+                  `${utils.replaceBrackets(song.artist)} - ${utils.replaceBrackets(song.title)}`,
+                  utils.getAlbumArt(song));
     }).catch((error) => {
       // Handle any errors
       logger.error(error);

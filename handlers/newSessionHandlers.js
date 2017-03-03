@@ -23,7 +23,7 @@ const newSessionHandlers = {
   },
   Unhandled() {
     // Not sure what to do
-    this.emit(':ask', 'Unhandled', 'Unhandled');
+    this.emit(':tell', this.t('UNHANDLED'));
   },
 };
 

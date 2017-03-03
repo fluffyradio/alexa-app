@@ -2,19 +2,22 @@ const alexa = require('alexa-sdk');
 const constants = require('../constants');
 const audioControl = require('../services/audioControl');
 const apiControl = require('../services/apiControl.js');
+const requestControl = require('../services/requestControl');
 
 // Handles all STREAM commands
 const audioHandlers = alexa.CreateStateHandler(constants.states.STREAM, {
   LaunchRequest() {
-    this.handler.state = constants.states.START;
-    this.response.speak(this.t('WELCOME')).listen(this.t('WELCOME'));
-    this.emit(':responseReady');
+    this.handler.state = constants.states.STREAM;
+    this.emit(':askWithCard', this.t('WELCOME'), this.t('WELCOME_SHORT'), this.t('WELCOME_TITLE'), this.t('WELCOME_CONTENT'), constants.fluffyLogo);
   },
   PlayStream() {
     audioControl.play.call(this);
   },
   CurrentSong() {
     apiControl.currentSong.call(this);
+  },
+  RequestSong() {
+    requestControl.startRequest.call(this);
   },
   'AMAZON.ResumeIntent': function resume() {
     audioControl.play.call(this);
@@ -49,17 +52,12 @@ const audioHandlers = alexa.CreateStateHandler(constants.states.STREAM, {
   'AMAZON.StartOverIntent': function startOver() {
     this.emit(':tell', this.t('STREAM_START_OVER'));
   },
-  SessionEndedRequest() {
-    this.response.state = constants.states.START;
-    this.response.speak(this.t('EXIT'));
-    this.emit(':responseReady');
-  },
   'AMAZON.CancelIntent': function cancel() {
-    this.emit('SessionEndedRequest');
+    this.response.state = constants.states.START;
+    this.emit(':tell', this.t('EXIT'));
   },
   'AMAZON.HelpIntent': function help() {
-    this.response.speak(this.t('STREAM_HELP')).listen(this.t('STREAM_HELP'));
-    this.emit(':responseReady');
+    this.emit(':ask', this.t('STREAM_HELP'), this.t('STREAM_HELP'));
   },
   PlaybackFailed() {
     this.emit(':tell', this.t('STREAM_FAILED'));
@@ -67,6 +65,7 @@ const audioHandlers = alexa.CreateStateHandler(constants.states.STREAM, {
   Unhandled() {
     // Manage errors here
     // TODO: Log errors to the logger
+    this.emit(':tell', this.t('UNHANDLED'));
   },
 });
 

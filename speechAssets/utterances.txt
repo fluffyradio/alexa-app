@@ -9,3 +9,4 @@ CurrentSong what's fluffing (/right now)
 RequestSong (/to) (request/search for/ask for/listen to/queue) {(adele/bruno mars/hello/flo rida/no)|SEARCHSTRING}
 SelectSong {SONGSELECTION}
 SelectSong number {SONGSELECTION}
+NoSelection (none of those/nevermind)

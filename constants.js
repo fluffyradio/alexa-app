@@ -13,6 +13,11 @@ module.exports = Object.freeze({
     // Fluffy Radio AAC Stream URL
   fluffyStreamUrl: 'https://stream.fluffyradio.com/stream/2/',
 
+  fluffyLogo: {
+    smallImageUrl: 'https://s3.amazonaws.com/fluffy-radio/fluffy-radio-large.png',
+    largeImageUrl: 'https://s3.amazonaws.com/fluffy-radio/fluffy-radio-large.png',
+  },
+
  /*
   * States:
   *  START          : Welcome state when the skill is launched.

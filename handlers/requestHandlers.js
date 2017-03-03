@@ -6,8 +6,7 @@ const requestControl = require('../services/requestControl');
 const requestHandlers = alexa.CreateStateHandler(constants.states.REQUEST, {
   LaunchRequest() {
     this.handler.state = constants.states.REQUEST;
-    this.response.speak('In Request Mode').listen('What now?');
-    this.emit(':responseReady');
+    this.emit(':askWithCard', this.t('WELCOME'), this.t('WELCOME_SHORT'), this.t('WELCOME_TITLE'), this.t('WELCOME_CONTENT'), constants.fluffyLogo);
   },
   RequestSong() {
     requestControl.startRequest.call(this);
@@ -15,22 +14,28 @@ const requestHandlers = alexa.CreateStateHandler(constants.states.REQUEST, {
   SelectSong() {
     requestControl.finishRequest.call(this);
   },
+  NoSelection() {
+    requestControl.singleNoRequest.call(this);
+  },
   'AMAZON.YesIntent': function yes() {
     requestControl.singleYesRequest.call(this);
   },
   'AMAZON.NoIntent': function no() {
     requestControl.singleNoRequest.call(this);
   },
-  SessionEndedRequest() {
-    this.response.speak(this.t('EXIT'));
-    this.handler.state = constants.states.START;
-    this.emit(':responseReady');
-  },
   'AMAZON.StopIntent': function stop() {
-    this.emit('SessionEndedRequest');
+    this.response.state = constants.states.START;
+    this.emit(':tell', this.t('EXIT'));
   },
   'AMAZON.CancelIntent': function cancel() {
-    this.emit('SessionEndedRequest');
+    this.response.state = constants.states.START;
+    this.emit(':tell', this.t('EXIT'));
+  },
+  Unhandled() {
+    // Manage errors here
+    // TODO: Log errors to the logger
+    this.response.state = constants.states.START;
+    this.emit(':tell', this.t('UNHANDLED'));
   },
 });
 

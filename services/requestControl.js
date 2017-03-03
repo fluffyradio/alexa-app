@@ -1,5 +1,6 @@
 const log4js = require('log4js');
 const constants = require('../constants');
+const utils = require('../utils');
 const fluffyApi = require('../services/fluffyApi');
 
 const logger = log4js.getLogger();
@@ -128,7 +129,11 @@ module.exports = {
       this.attributes.REQUEST_RESULTS = null;
 
       // Tell the user it's requested
-      this.emit(':tell', this.t('REQUEST_RESULT_SUCCESS'), this.t('REQUEST_RESULT_SUCCESS'));
+      this.emit(':tellWithCard',
+                  this.t('REQUEST_RESULT_SUCCESS'),
+                  `${utils.replaceBrackets(song.artist)} - ${utils.replaceBrackets(song.title)}`,
+                  `${utils.replaceBrackets(song.artist)} - ${utils.replaceBrackets(song.title)}`,
+                  utils.getAlbumArt(song));
     }).catch((error) => {
       // Log the error
       logger.error(error);
@@ -201,6 +206,6 @@ module.exports = {
     this.attributes.PENDING_REQUEST = null;
 
     // Exit the app
-    this.emit(':tell', this.t('EXIT'), this.t('EXIT'));
+    this.emit(':tell', this.t('EXIT'));
   },
 };

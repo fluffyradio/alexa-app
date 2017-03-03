@@ -7,8 +7,9 @@ const requestControl = require('../services/requestControl');
 // Handles all START commands
 const startHandlers = alexa.CreateStateHandler(constants.states.START, {
   LaunchRequest() {
-    this.response.speak(this.t('WELCOME')).listen(this.t('WELCOME'));
-    this.emit(':responseReady');
+    this.attributes.PENDING_REQUEST = null;
+    this.attributes.REQUEST_RESULTS = null;
+    this.emit(':askWithCard', this.t('WELCOME'), this.t('WELCOME_SHORT'), this.t('WELCOME_TITLE'), this.t('WELCOME_CONTENT'), constants.fluffyLogo);
   },
   PlayStream() {
     audioControl.play.call(this);
@@ -19,22 +20,19 @@ const startHandlers = alexa.CreateStateHandler(constants.states.START, {
   RequestSong() {
     requestControl.startRequest.call(this);
   },
-  SessionEndedRequest() {
+  'AMAZON.StopIntent': function stop() {
+    this.response.state = constants.states.START;
     this.emit(':tell', this.t('EXIT'));
   },
-  'AMAZON.StopIntent': function stop() {
-    this.emit('SessionEndedRequest');
-  },
   'AMAZON.CancelIntent': function cancel() {
-    this.emit('SessionEndedRequest');
+    this.response.state = constants.states.START;
+    this.emit(':tell', this.t('EXIT'));
   },
   'AMAZON.HelpIntent': function help() {
-    this.response.speak(this.t('STREAM_HELP')).listen(this.t('STREAM_HELP'));
-    this.emit(':responseReady');
+    this.emit(':ask', this.t('START_HELP'), this.t('START_HELP'));
   },
   Unhandled() {
-    this.response.speak(this.t('WELCOME'));
-    this.emit(':responseReady');
+    this.emit(':tell', this.t('UNHANDLED'));
   },
 });
 

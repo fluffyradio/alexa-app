@@ -68,6 +68,9 @@
           "type": "AMAZON.NUMBER"
         }
       ]
+    },
+    {
+      "intent": "NoSelection"
     }
   ]
 }
