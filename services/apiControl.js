@@ -1,3 +1,5 @@
+'use strict';
+
 const log4js = require('log4js');
 const utils = require('../utils');
 const fluffyApi = require('../services/fluffyApi');

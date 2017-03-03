@@ -1,3 +1,5 @@
+'use strict';
+
 // Import NPM Packages
 const newrelic = require('newrelic');
 const log4js = require('log4js');
@@ -46,7 +48,7 @@ exports.handler = function main(event, context) {
 
   // New Relic work around to force metrics to be sent in a lambda function
   // eslint-disable-next-line no-underscore-dangle
-  if (newrelic.agent._state === 'starting') {
+  if (newrelic.agent && newrelic.agent._state === 'starting') {
     newrelic.agent.on('connected', () => {
       newrelic.shutdown({ collectPendingData: true });
     });

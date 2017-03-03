@@ -1,3 +1,5 @@
+'use strict';
+
 const alexa = require('alexa-sdk');
 const constants = require('../constants');
 const audioControl = require('../services/audioControl');

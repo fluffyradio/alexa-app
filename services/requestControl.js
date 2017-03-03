@@ -1,3 +1,5 @@
+'use strict';
+
 const log4js = require('log4js');
 const constants = require('../constants');
 const utils = require('../utils');

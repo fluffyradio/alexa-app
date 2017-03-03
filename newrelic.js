@@ -1,3 +1,5 @@
+'use strict';
+
 /**
  * New Relic agent configuration.
  *
@@ -8,7 +10,7 @@ exports.config = {
   /**
    * Array of application names.
    */
-  app_name: ['alexa-app'],
+  app_name: ['fluffy-radio-alexa-app'],
   /**
    * Your New Relic license key.
    */
@@ -19,7 +21,7 @@ exports.config = {
      * issues with the agent, 'info' and higher will impose the least overhead on
      * production applications.
      */
-    level: 'debug',
+    level: 'info',
     filepath: 'stdout',
   },
 };
