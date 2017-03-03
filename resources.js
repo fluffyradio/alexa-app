@@ -16,7 +16,7 @@ module.exports = Object.freeze({
       SONG_NULL: 'I wasn\'t able to get information about that song',
       SONG_JOINER: 'by',
       REQUEST_SEARCH_EMPTY: 'I didn\'t catch an artist or song name.  What would you like to request?',
-      REQUEST_SEARCH_NO_RESULTS: 'I wasn\'t able to find any results.. What artist or song did you want to request?',
+      REQUEST_SEARCH_NO_RESULTS: 'I wasn\'t able to find any results.. Please try your search again or visit fluffy radio dot com to see our full music library',
       REQUEST_SEARCH_RESULT_CONFIRM: 'Did you want to request',
       REQUEST_SEARCH_RESULTS_MANY: 'I found a few results, which number do you want?',
       REQUEST_SEARCH_ERROR: 'I ran into a problem searching for your request.',

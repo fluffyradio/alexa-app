@@ -31,73 +31,53 @@ PlayStream to stream
 PlayStream to stream now
 RequestSong ask for {adele|SEARCHSTRING}
 RequestSong ask for {bruno mars|SEARCHSTRING}
-RequestSong ask for {five seconds of summer|SEARCHSTRING}
 RequestSong ask for {flo rida|SEARCHSTRING}
 RequestSong ask for {hello|SEARCHSTRING}
 RequestSong ask for {no|SEARCHSTRING}
-RequestSong ask for {twenty four k magic|SEARCHSTRING}
 RequestSong listen to {adele|SEARCHSTRING}
 RequestSong listen to {bruno mars|SEARCHSTRING}
-RequestSong listen to {five seconds of summer|SEARCHSTRING}
 RequestSong listen to {flo rida|SEARCHSTRING}
 RequestSong listen to {hello|SEARCHSTRING}
 RequestSong listen to {no|SEARCHSTRING}
-RequestSong listen to {twenty four k magic|SEARCHSTRING}
 RequestSong queue {adele|SEARCHSTRING}
 RequestSong queue {bruno mars|SEARCHSTRING}
-RequestSong queue {five seconds of summer|SEARCHSTRING}
 RequestSong queue {flo rida|SEARCHSTRING}
 RequestSong queue {hello|SEARCHSTRING}
 RequestSong queue {no|SEARCHSTRING}
-RequestSong queue {twenty four k magic|SEARCHSTRING}
 RequestSong request {adele|SEARCHSTRING}
 RequestSong request {bruno mars|SEARCHSTRING}
-RequestSong request {five seconds of summer|SEARCHSTRING}
 RequestSong request {flo rida|SEARCHSTRING}
 RequestSong request {hello|SEARCHSTRING}
 RequestSong request {no|SEARCHSTRING}
-RequestSong request {twenty four k magic|SEARCHSTRING}
 RequestSong search for {adele|SEARCHSTRING}
 RequestSong search for {bruno mars|SEARCHSTRING}
-RequestSong search for {five seconds of summer|SEARCHSTRING}
 RequestSong search for {flo rida|SEARCHSTRING}
 RequestSong search for {hello|SEARCHSTRING}
 RequestSong search for {no|SEARCHSTRING}
-RequestSong search for {twenty four k magic|SEARCHSTRING}
 RequestSong to ask for {adele|SEARCHSTRING}
 RequestSong to ask for {bruno mars|SEARCHSTRING}
-RequestSong to ask for {five seconds of summer|SEARCHSTRING}
 RequestSong to ask for {flo rida|SEARCHSTRING}
 RequestSong to ask for {hello|SEARCHSTRING}
 RequestSong to ask for {no|SEARCHSTRING}
-RequestSong to ask for {twenty four k magic|SEARCHSTRING}
 RequestSong to listen to {adele|SEARCHSTRING}
 RequestSong to listen to {bruno mars|SEARCHSTRING}
-RequestSong to listen to {five seconds of summer|SEARCHSTRING}
 RequestSong to listen to {flo rida|SEARCHSTRING}
 RequestSong to listen to {hello|SEARCHSTRING}
 RequestSong to listen to {no|SEARCHSTRING}
-RequestSong to listen to {twenty four k magic|SEARCHSTRING}
 RequestSong to queue {adele|SEARCHSTRING}
 RequestSong to queue {bruno mars|SEARCHSTRING}
-RequestSong to queue {five seconds of summer|SEARCHSTRING}
 RequestSong to queue {flo rida|SEARCHSTRING}
 RequestSong to queue {hello|SEARCHSTRING}
 RequestSong to queue {no|SEARCHSTRING}
-RequestSong to queue {twenty four k magic|SEARCHSTRING}
 RequestSong to request {adele|SEARCHSTRING}
 RequestSong to request {bruno mars|SEARCHSTRING}
-RequestSong to request {five seconds of summer|SEARCHSTRING}
 RequestSong to request {flo rida|SEARCHSTRING}
 RequestSong to request {hello|SEARCHSTRING}
 RequestSong to request {no|SEARCHSTRING}
-RequestSong to request {twenty four k magic|SEARCHSTRING}
 RequestSong to search for {adele|SEARCHSTRING}
 RequestSong to search for {bruno mars|SEARCHSTRING}
-RequestSong to search for {five seconds of summer|SEARCHSTRING}
 RequestSong to search for {flo rida|SEARCHSTRING}
 RequestSong to search for {hello|SEARCHSTRING}
 RequestSong to search for {no|SEARCHSTRING}
-RequestSong to search for {twenty four k magic|SEARCHSTRING}
 SelectSong number {SONGSELECTION}
 SelectSong {SONGSELECTION}

@@ -36,8 +36,8 @@ module.exports = {
        */
 
       if (songs.length === 0) {
-        // No results, reprompt the user, ask if they want to try again
-        this.emit(':ask', this.t('REQUEST_SEARCH_NO_RESULTS'), this.t('REQUEST_SEARCH_NO_RESULTS'));
+        // No results, tell the user to try again
+        this.emit(':tell', this.t('REQUEST_SEARCH_NO_RESULTS'), this.t('REQUEST_SEARCH_NO_RESULTS'));
       } else if (songs.length === 1) {
         // One result, make sure this is the song they wanted
         this.attributes.PENDING_REQUEST = songs[0].id;
