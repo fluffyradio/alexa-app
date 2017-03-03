@@ -1,0 +1,11 @@
+FOR USE WITH THIS TOOL: http://www.makermusings.com/amazon-echo-utterance-expander/
+
+PlayStream (/to) (begin/fluff on/play/listen/stream) (/now)
+PlayStream (/to play) music (/now)
+CurrentSong what's playing (/right now)
+CurrentSong what's on (/right now)
+CurrentSong what song is this
+CurrentSong what's fluffing (/right now)
+RequestSong (/to) (request/search for/ask for/listen to/queue) {(adele/bruno mars/five seconds of summer/twenty four k magic/hello/flo rida/no)|SEARCHSTRING}
+SelectSong {SONGSELECTION}
+SelectSong number {SONGSELECTION}
