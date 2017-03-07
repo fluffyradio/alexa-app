@@ -2,6 +2,7 @@
 
 const log4js = require('log4js');
 const constants = require('../constants');
+const htmlEncode = require('js-htmlencode');
 const utils = require('../utils');
 const fluffyApi = require('../services/fluffyApi');
 
@@ -45,8 +46,8 @@ module.exports = {
         // One result, make sure this is the song they wanted
         this.attributes.PENDING_REQUEST = songs[0].id;
         this.emit(':ask',
-                    `${this.t('REQUEST_SEARCH_RESULT_CONFIRM')} ${songs[0].title} ${this.t('SONG_JOINER')} ${songs[0].artist}?`,
-                    `${this.t('REQUEST_SEARCH_RESULT_CONFIRM')} ${songs[0].title} ${this.t('SONG_JOINER')} ${songs[0].artist}?`);
+                    `${this.t('REQUEST_SEARCH_RESULT_CONFIRM')} ${htmlEncode.htmlEncode(songs[0].title)} ${this.t('SONG_JOINER')} ${htmlEncode.htmlEncode(songs[0].artist)}?`,
+                    `${this.t('REQUEST_SEARCH_RESULT_CONFIRM')} ${htmlEncode.htmlEncode(songs[0].title)} ${this.t('SONG_JOINER')} ${htmlEncode.htmlEncode(songs[0].artist)}?`);
       } else {
         // Many results, prompt the user for which song they want
         // For simplicity sake, we only give the user the first three results back
@@ -63,7 +64,7 @@ module.exports = {
         // Loop through the songs to build the response and session object
         for (let i = 0; i < length; i += 1) {
           // Add the song record to the response phrase...
-          output += `${i + 1}. ${songs[i].title} ${this.t('SONG_JOINER')} ${songs[i].artist}. `;
+          output += `${i + 1}. ${htmlEncode.htmlEncode(songs[i].title)} ${this.t('SONG_JOINER')} ${htmlEncode.htmlEncode(songs[i].artist)}. `;
 
           // Add the song to the session so we can grab it later...
           requestOptions[i] = {

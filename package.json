@@ -17,6 +17,7 @@
   "dependencies": {
     "alexa-sdk": "^1.0.7",
     "aws-sdk": "^2.16.0",
+    "js-htmlencode": "^0.3.0",
     "log4js": "^1.1.0",
     "newrelic": "^1.37.2",
     "request": "^2.79.0",

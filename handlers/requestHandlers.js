@@ -33,6 +33,9 @@ const requestHandlers = alexa.CreateStateHandler(constants.states.REQUEST, {
     this.response.state = constants.states.START;
     this.emit(':tell', this.t('EXIT'));
   },
+  'AMAZON.HelpIntent': function help() {
+    this.emit(':ask', this.t('REQUEST_HELP'), this.t('REQUEST_HELP'));
+  },
   Unhandled() {
     // Manage errors here
     // TODO: Log errors to the logger

@@ -10,7 +10,7 @@ module.exports = Object.freeze({
       WELCOME_CONTENT: 'You can do one of three things:\r\n- Stream Fluffy Radio: Listen Now\r\n- Currently Playing: Now Playing\r\n- Request a Song: Request <Artist> or <Song>\r\nVisit us at FluffyRadio.com to view all of the songs you can request.',
       EXIT: 'OK.. Check us out online at fluffy radio dot com',
       ERROR: 'I wasn\'t able to process your request',
-      START_HELP: 'You can do three things in this skill. To find out what is currently playing, say what\'s playing.. To request a song or artist say request followed by a song title, or, artist name.. To listen to fluffy radio just say listen now',
+      START_HELP: 'You can do three things in this skill. To find out what is currently playing, say what\'s playing.. To request a song or artist say request followed by a song title, or, artist name.. To listen to fluffy radio just say listen now. What would you like to do?',
       STREAM_FAILED: 'Looks like we fluffed something up.. The audio stream isn\'t currently available.. Try again later.',
       STREAM_LOOP: 'Don\'t worry. We\'ll always keep looping',
       STREAM_NEXT: 'Sorry, complex algorithms pick the next song.',
@@ -19,7 +19,7 @@ module.exports = Object.freeze({
       STREAM_SHUFFLE_ON: 'Wait a minute... we get to pick the fluffing music.',
       STREAM_SHUFFLE_OFF: 'A big bad government agency doesn\'t allow you to turn our shuffle algorithms off.',
       STREAM_START_OVER: 'We can\'t restart the music.',
-      STREAM_HELP: 'You can do three things in this skill. To find out what is currently playing, say what\'s playing.. To request a song or artist say request followed by a song title, or, artist name.. To listen to fluffy radio just say listen now',
+      STREAM_HELP: 'You can do three things in this skill. To find out what is currently playing, say what\'s playing.. To request a song or artist say request followed by a song title, or, artist name.. To listen to fluffy radio just say listen now. What would you like to do?',
       SONG_NULL: 'I wasn\'t able to get information about that song',
       SONG_JOINER: 'by',
       REQUEST_SEARCH_EMPTY: 'I didn\'t catch an artist or song name.  What would you like to request?',
@@ -32,6 +32,7 @@ module.exports = Object.freeze({
       REQUEST_RESULT_SUCCESS: 'Sweet, we\'ve queued up you request',
       REQUEST_SELECT_EMPTY: 'I didn\'t catch which number you wanted to request, which number did you want?',
       REQUEST_SELECT_TOO_HIGH: 'You can only select one through three, which number did you want?',
+      REQUEST_HELP: 'You can do three things in this skill. To find out what is currently playing, say what\'s playing.. To request a song or artist say request followed by a song title, or, artist name.. To listen to fluffy radio just say listen now. What would you like to do?'
     },
   },
   'en-GB': {
